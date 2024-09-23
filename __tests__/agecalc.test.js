@@ -1,3 +1,5 @@
+import { UserAgeObject } from './../src/index.js';
+
 describe("UserAgeObject", () => {
   describe("getAgeOnOtherPlanets()", () => {
     test("It should return a set=like object" , () => {
