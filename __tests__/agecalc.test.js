@@ -1,10 +1,12 @@
-describe("userAgeObject", () => {
+describe("UserAgeObject", () => {
   describe("getAgeOnOtherPlanets()", () => {
     test("It should return a set=like object" , () => {
-      let testAgeObject = new userAgeObject(Date.now()); 
+      let testAgeObject = new UserAgeObject(Date.now()); 
       let testMap = testAgeObject.getAgeOnOtherPlanets();
-      expect(testMap.get.toString()).toBeTruthy();
-      expect(testMap.set.toString()).toBeTruthy();
+      //These two functions are in both JS sets and maps
+      //Don't use union() et al because thats very recently implemented in browsers
+      expect(testMap.has.toString()).toBeTruthy();
+      expect(testMap.keys.toString()).toBeTruthy();
     });
   });
 });
