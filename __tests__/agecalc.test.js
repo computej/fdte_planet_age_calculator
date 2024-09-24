@@ -1,5 +1,7 @@
 import { UserAgeObject } from './../src/index.js';
 
+const testDate = new Date(2007, 2, 17);
+
 describe("UserAgeObject", () => {
   describe("getAgeOnOtherPlanets()", () => {
     test("It should return a set=like object" , () => {
@@ -9,6 +11,14 @@ describe("UserAgeObject", () => {
       //Don't use union() et al because thats very recently implemented in browsers
       expect(testMap.has.toString()).toBeTruthy();
       expect(testMap.keys.toString()).toBeTruthy();
+    });
+    test("The returned object should have the following keys: \nMercury\nVenus\nMars\nJupiter" , () => {
+      let testAgeObject = new UserAgeObject(Date.now());
+      let testMap = testAgeObject.getAgeOnOtherPlanets();
+      expect(testMap.has("Mercury")).toBeTruthy();
+      expect(testMap.has("Venus")).toBeTruthy();
+      expect(testMap.has("Mars")).toBeTruthy();
+      expect(testMap.has("Jupiter")).toBeTruthy();
     });
   });
 });
