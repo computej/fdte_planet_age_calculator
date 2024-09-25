@@ -3,6 +3,12 @@ import { UserAgeObject } from './../src/index.js';
 const testDate = new Date(2007, 2, 17);
 
 describe("UserAgeObject", () => {
+  describe("constructor()", () => {
+    test("It should write its argument to the variable \"givenBirthday\"", () => {
+      let testAgeObject = new UserAgeObject(testDate);
+      expect(testAgeObject.givenBirthday).toBeTruthy();
+    });
+  });
   describe("getAgeOnOtherPlanets()", () => {
     test("It should return a set=like object" , () => {
       let testAgeObject = new UserAgeObject(Date.now()); 
@@ -19,6 +25,9 @@ describe("UserAgeObject", () => {
       expect(testMap.has("Venus")).toBeTruthy();
       expect(testMap.has("Mars")).toBeTruthy();
       expect(testMap.has("Jupiter")).toBeTruthy();
+    });
+    test.skip("TBD", () => {
+
     });
   });
 });
