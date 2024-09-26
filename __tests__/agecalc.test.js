@@ -6,7 +6,7 @@ describe("UserAgeObject", () => {
   describe("constructor()", () => {
     test("It should write its argument to the variable \"givenBirthday\"", () => {
       let testAgeObject = new UserAgeObject(testDate);
-      expect(testAgeObject.givenBirthday).toBeTruthy();
+      expect(testAgeObject.givenBirthday).toBe(testDate);
     });
   });
   describe("getAgeOnOtherPlanets()", () => {
