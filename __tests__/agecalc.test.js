@@ -1,12 +1,17 @@
 import { UserAgeObject } from './../src/index.js';
 
-const testDate = new Date(2007, 2, 17);
+const testFirstDate = new Date(2002, 2, 17);
+const testSecondDate = new Date(2024, 8, 8);
 
 describe("UserAgeObject", () => {
   describe("constructor()", () => {
-    test("It should write its argument to the variable \"givenBirthday\"", () => {
-      let testAgeObject = new UserAgeObject(testDate);
-      expect(testAgeObject.givenBirthday).toBe(testDate);
+    test("It should write its first argument to the variable \"firstDate\"", () => {
+      let testAgeObject = new UserAgeObject(testFirstDate);
+      expect(testAgeObject.firstDate).toBe(testFirstDate);
+    });
+    test("It should write its second argument to \"secondDate\"", () => {
+      let testAgeObject = new UserAgeObject(testFirstDate, testSecondDate);
+      expect(testAgeObject.secondDate).toBe(testSecondDate);
     });
   });
   describe("getAgeOnOtherPlanets()", () => {
@@ -26,7 +31,7 @@ describe("UserAgeObject", () => {
       expect(testMap.has("Mars")).toBeTruthy();
       expect(testMap.has("Jupiter")).toBeTruthy();
     });
-    test.skip("TBD", () => {
+    test.skip("TDB", () => {
 
     });
   });
