@@ -1,6 +1,7 @@
 export class UserAgeObject {
-  constructor(date) {
-    this.givenBirthday = date;
+  constructor(dateOne,dateTwo) {
+    this.firstDate = dateOne;
+    this.secondDate = dateTwo;
   }
 
   getAgeOnOtherPlanets() {
