@@ -14,6 +14,7 @@ describe("UserAgeObject", () => {
       expect(testAgeObject.secondDate).toBe(testSecondDate);
     });
     test("If the second argument is undefined, write Date.Now to secondDate", () => {
+      //TODO: make more strict, see if it's between the time of starting this and the time that expect is called
       let testAgeObject = new UserAgeObject(testFirstDate);
       expect(testAgeObject.secondDate).toBeTruthy(); //that date is always incrementing by nature, just check for existence
     });
@@ -24,11 +25,11 @@ describe("UserAgeObject", () => {
     });
   });
   describe("getAgeOnOtherPlanets()", () => {
-    test("It should return a set=like object" , () => {
+    test("It should return a set-like object" , () => {
       let testAgeObject = new UserAgeObject(testFirstDate, testSecondDate);
       let testMap = testAgeObject.getAgeOnOtherPlanets();
       //These two functions are in both JS sets and maps
-      //Don't use union() et al because thats very recently implemented in browsers
+      //Don't use union() et al because that's very recently implemented in browsers
       expect(testMap.has.toString()).toBeTruthy();
       expect(testMap.keys.toString()).toBeTruthy();
     });
