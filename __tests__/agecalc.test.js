@@ -13,6 +13,10 @@ describe("UserAgeObject", () => {
       let testAgeObject = new UserAgeObject(testFirstDate, testSecondDate);
       expect(testAgeObject.secondDate).toBe(testSecondDate);
     });
+    test("If the second argument is undefined, write Date.Now to secondDate", () => {
+      let testAgeObject = new UserAgeObject(testFirstDate);
+      expect(testAgeObject.secondDate).toBeTruthy(); //that date is always incrementing by nature, just check for existence
+    });
     test("It should throw an exeption if the first date is chronologically after the second date", () => {
       //as in the first argument is a date that's after the second argument
       expect(() => { let testAgeObject = new UserAgeObject(testSecondDate,testFirstDate) }).toThrow();
@@ -28,7 +32,7 @@ describe("UserAgeObject", () => {
       expect(testMap.has.toString()).toBeTruthy();
       expect(testMap.keys.toString()).toBeTruthy();
     });
-    test("The returned object should have the following keys: \nEarth\nMercury\nVenus\nMars\nJupiter" , () => {
+    test("The returned object should have the following keys: \nMercury\nVenus\nMars\nJupiter" , () => {
       let testAgeObject = new UserAgeObject(Date.now());
       let testMap = testAgeObject.getAgeOnOtherPlanets();
       expect(testMap.has("Mercury")).toBeTruthy();
