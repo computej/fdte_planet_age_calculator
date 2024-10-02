@@ -1,7 +1,7 @@
 import { UserAgeObject } from './../src/index.js';
 
-const testFirstDate = new Date(2002, 2, 17);
-const testSecondDate = new Date(2024, 8, 8);
+const testFirstDate = new Date(2002, 1, 17);
+const testSecondDate = new Date(2024, 7, 8);
 
 describe("UserAgeObject", () => {
   describe("constructor()", () => {
