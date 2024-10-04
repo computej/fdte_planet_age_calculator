@@ -45,7 +45,7 @@ describe("UserAgeObject", () => {
       //we are checking the milliseconds from epoch from valueOf
       let testAgeObject = new UserAgeObject(testFirstDate, testSecondDate);
       const earthDifference = (testSecondDate.valueOf() - testFirstDate.valueOf());
-      expect(testAgeObject.getAgeOnOtherPlanets().get("Mercury")).toBe(earthDifference * (1.24));
+      expect(testAgeObject.getAgeOnOtherPlanets().get("Mercury")).toBe(earthDifference * (1/.24));
     });
   });
 });
