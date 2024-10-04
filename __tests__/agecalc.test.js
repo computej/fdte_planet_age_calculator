@@ -41,8 +41,11 @@ describe("UserAgeObject", () => {
       expect(testMap.has("Mars")).toBeTruthy();
       expect(testMap.has("Jupiter")).toBeTruthy();
     });
-    test.skip("The value of the \"Mercury\" key is equal to .24 times the difference of firstDate and secondDate", () => {
-      //as in the raw milliseconds from Date.getTime()
+    test("The value of the \"Mercury\" key is equal to 1/.24 times the difference of firstDate and secondDate", () => {
+      //we are checking the milliseconds from epoch from valueOf
+      let testAgeObject = new UserAgeObject(testFirstDate, testSecondDate);
+      const earthDifference = (testSecondDate.valueOf() - testFirstDate.valueOf());
+      expect(testAgeObject.getAgeOnOtherPlanets().get("Mercury")).toBe(earthDifference * (1.24));
     });
   });
 });
