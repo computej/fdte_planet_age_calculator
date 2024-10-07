@@ -12,12 +12,16 @@ export class UserAgeObject {
       }
   }
 
+  oneYearMS = 1;
+
   getAgeOnOtherPlanets() {
+
+    const ageDifference = this.secondDate.valueOf() - this.firstDate.valueOf();
     return new Map([
-      ["Mercury", false],
-      ["Venus",false],
-      ["Mars",false],
-      ["Jupiter", false]
+      ["Mercury", ageDifference * (1/.24)],
+      ["Venus",ageDifference * (1/.62)],
+      ["Mars",ageDifference * (1/1.88)],
+      ["Jupiter", ageDifference * (1/11.86)]
     ]);
   }
 }
