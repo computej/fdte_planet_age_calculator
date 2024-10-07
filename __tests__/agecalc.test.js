@@ -47,6 +47,24 @@ describe("UserAgeObject", () => {
       const earthDifference = (testSecondDate.valueOf() - testFirstDate.valueOf());
       expect(testAgeObject.getAgeOnOtherPlanets().get("Mercury")).toBe(earthDifference * (1/.24));
     });
+    test("The value of the \"Venus\" key is equal to 1/.62 times the difference of firstDate and secondDate", () => {
+      //we are checking the milliseconds from epoch from valueOf
+      let testAgeObject = new UserAgeObject(testFirstDate, testSecondDate);
+      const earthDifference = (testSecondDate.valueOf() - testFirstDate.valueOf());
+      expect(testAgeObject.getAgeOnOtherPlanets().get("Venus")).toBe(earthDifference * (1/.62));
+    });
+    test("The value of the \"Mars\" key is equal to 1/1.88 times the difference of firstDate and secondDate", () => {
+      //we are checking the milliseconds from epoch from valueOf
+      let testAgeObject = new UserAgeObject(testFirstDate, testSecondDate);
+      const earthDifference = (testSecondDate.valueOf() - testFirstDate.valueOf());
+      expect(testAgeObject.getAgeOnOtherPlanets().get("Mars")).toBe(earthDifference * (1/1.88));
+    });
+    test("The value of the \"Jupiter\" key is equal to 1/11.86 times the difference of firstDate and secondDate", () => {
+      //we are checking the milliseconds from epoch from valueOf
+      let testAgeObject = new UserAgeObject(testFirstDate, testSecondDate);
+      const earthDifference = (testSecondDate.valueOf() - testFirstDate.valueOf());
+      expect(testAgeObject.getAgeOnOtherPlanets().get("Jupiter")).toBe(earthDifference * (1/11.86));
+    });
   });
 });
 
