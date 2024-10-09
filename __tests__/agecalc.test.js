@@ -2,6 +2,7 @@ import { UserAgeObject } from './../src/index.js';
 
 const testFirstDate = new Date(2002, 1, 17);
 const testSecondDate = new Date(2024, 7, 8);
+const testDuration = testSecondDate.valueOf() - testFirstDate.valueOf();
 let testObject = new UserAgeObject(testFirstDate,testSecondDate);
 
 describe("UserAgeObject", () => {
@@ -49,19 +50,27 @@ describe("UserAgeObject", () => {
       expect(testObject.getAgeMSOnOtherPlanets().get("Mercury")).toBe(earthDifference * (1/.24));
     });
     test("The value of the \"Venus\" key is equal to 1/.62 times the difference of firstDate and secondDate", () => {
-      //we are checking the milliseconds from epoch from valueOf
       const earthDifference = (testSecondDate.valueOf() - testFirstDate.valueOf());
       expect(testObject.getAgeMSOnOtherPlanets().get("Venus")).toBe(earthDifference * (1/.62));
     });
     test("The value of the \"Mars\" key is equal to 1/1.88 times the difference of firstDate and secondDate", () => {
-      //we are checking the milliseconds from epoch from valueOf
       const earthDifference = (testSecondDate.valueOf() - testFirstDate.valueOf());
       expect(testObject.getAgeMSOnOtherPlanets().get("Mars")).toBe(earthDifference * (1/1.88));
     });
     test("The value of the \"Jupiter\" key is equal to 1/11.86 times the difference of firstDate and secondDate", () => {
-      //we are checking the milliseconds from epoch from valueOf
       const earthDifference = (testSecondDate.valueOf() - testFirstDate.valueOf());
       expect(testObject.getAgeMSOnOtherPlanets().get("Jupiter")).toBe(earthDifference * (1/11.86));
+    });
+  });
+  describe("MStoYMD", () => { //maybe this could be a global function?
+    test.skip("It should decrement the input by 31,556,952,000 milliseconds until less than 31,556,952,000.", () => {
+      //how are we going to track this
+    });
+    test("It should return a map containing \"Years\", \"Months\", and \"Days\"", () => {
+      const outMap = testObject.MStoYMD();
+      expect(outMap.has("Years")).toBeTruthy();
+      expect(outMap.has("Months")).toBeTruthy();
+      expect(outMap.has("Days")).toBeTruthy();
     });
   });
 });
