@@ -1,5 +1,7 @@
 import { UserAgeObject } from './../src/index.js';
 
+
+//the month starts at 0 here
 const testFirstDate = new Date(2002, 1, 17);
 const testSecondDate = new Date(2024, 7, 8);
 const testDuration = testSecondDate.valueOf() - testFirstDate.valueOf();
@@ -63,14 +65,17 @@ describe("UserAgeObject", () => {
     });
   });
   describe("MStoYMD", () => { //maybe this could be a global function?
-    test.skip("It should decrement the input by 31,556,952,000 milliseconds until less than 31,556,952,000.", () => {
-      //how are we going to track this
-    });
     test("It should return a map containing \"Years\", \"Months\", and \"Days\"", () => {
       const outMap = testObject.MStoYMD();
       expect(outMap.has("Years")).toBeTruthy();
       expect(outMap.has("Months")).toBeTruthy();
       expect(outMap.has("Days")).toBeTruthy();
+    });
+    test("It should decrement the input by 31,556,952,000 until less than 31,556,952,000, incrementing \"Years\" as it does so", () => {
+      const outMap = testObject.MStoYMD(testDuration);
+      expect(outMap.get("Years")).toBe(22);
+      const otherMap = testObject.MStoYMD(31556952001);
+      expect(otherMap.get("Years")).toBe(1);
     });
   });
 });
