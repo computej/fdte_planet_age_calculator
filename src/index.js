@@ -24,4 +24,17 @@ export class UserAgeObject {
       ["Jupiter", ageDifference * (1/11.86)]
     ]);
   }
+
+  MStoYMD(ms) {
+    //year count
+    let outMap = new Map([
+      ["Years",0],
+      ["Months",0],
+      ["Days",0]
+    ]);
+    for (let index = ms; index >= 31556952000; index -= 31556952000) {
+      outMap.set("Years", outMap.get("Years") + 1);
+    }
+    return outMap;
+  }
 }
