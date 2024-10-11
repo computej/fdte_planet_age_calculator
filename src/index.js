@@ -32,8 +32,9 @@ export class UserAgeObject {
       ["Months",0],
       ["Days",0]
     ]);
-    for (let index = ms; index >= 31556952000; index -= 31556952000) {
-      outMap.set("Years", outMap.get("Years") + 1);
+    if(ms >= 31556952000) {
+      outMap.set("Years", Math.floor(ms / 31556952000));
+      console.log(outMap.get("Years"));
     }
     return outMap;
   }
