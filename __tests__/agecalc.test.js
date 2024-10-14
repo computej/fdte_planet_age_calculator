@@ -71,11 +71,16 @@ describe("UserAgeObject", () => {
       expect(outMap.has("Months")).toBeTruthy();
       expect(outMap.has("Days")).toBeTruthy();
     });
-    test("It should decrement the input by 31,556,952,000 until less than 31,556,952,000, incrementing \"Years\" as it does so", () => {
+    test("It should decrement the input by 31,556,952,000 until less than 31,556,952,000 incrementing \"Years\" as it does so", () => {
+      //TODO: do this with division in like one pass
       const outMap = testObject.MStoYMD(testDuration);
       expect(outMap.get("Years")).toBe(22);
       const otherMap = testObject.MStoYMD(31556952001);
       expect(otherMap.get("Years")).toBe(1);
+    });
+    test("If less than 31556952000, decrement the input by 86,400,000 and increment \"Months\"", () => {
+      const outMap = testObject.MStoYMD(testDuration);
+      expect(outMap.get("Months")).toBe(5);
     });
   });
 });
