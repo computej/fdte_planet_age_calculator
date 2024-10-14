@@ -32,9 +32,15 @@ export class UserAgeObject {
       ["Months",0],
       ["Days",0]
     ]);
-    if(ms >= 31556952000) {
+    if(ms >= 31556952000) { //one year
       outMap.set("Years", Math.floor(ms / 31556952000));
-      console.log(outMap.get("Years"));
+      ms = ms - (Math.floor(ms / 31556952000) * 31556952000);
+      console.log(ms);
+    }
+    if (ms >= 2629746000) { // one month
+      outMap.set("Months", Math.floor(ms / 2629746000));
+      ms = ms - (Math.floor(ms / 2629746000) * 2629746000);
+      console.log(ms);
     }
     return outMap;
   }
