@@ -78,7 +78,7 @@ describe("UserAgeObject", () => {
       const otherMap = testObject.MStoYMD(31556952001);
       expect(otherMap.get("Years")).toBe(1);
     });
-    test("If less than 31556952000, decrement the input by 86,400,000 and increment \"Months\"", () => {
+    test("If less than 31556952000, decrement the input by 31556952000 and increment \"Months\"", () => {
       const outMap = testObject.MStoYMD(testDuration);
       expect(outMap.get("Months")).toBe(5);
     });
