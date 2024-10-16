@@ -64,24 +64,11 @@ describe("UserAgeObject", () => {
       expect(testObject.getAgeMSOnOtherPlanets().get("Jupiter")).toBe(earthDifference * (1/11.86));
     });
   });
-  describe("MStoYMD", () => { //maybe this could be a global function?
-    test("It should return a map containing \"Years\", \"Months\", and \"Days\"", () => {
-      const outMap = testObject.MStoYMD();
-      expect(outMap.has("Years")).toBeTruthy();
-      expect(outMap.has("Months")).toBeTruthy();
-      expect(outMap.has("Days")).toBeTruthy();
+  describe("durationMStoYears()", () => {
+    //TODO: Rework: we only care about years
+    test("It should return the difference between the values of first date and the second date, over 31556952000",() => {
+      const years = testObject.durationMStoYears();
+      expect(years).toBe(22.472626633903047); // i hope precision doesn't screw it up
     });
-    test("It should decrement the input by 31,556,952,000 until less than 31,556,952,000 incrementing \"Years\" as it does so", () => {
-      //TODO: do this with division in like one pass
-      const outMap = testObject.MStoYMD(testDuration);
-      expect(outMap.get("Years")).toBe(22);
-      const otherMap = testObject.MStoYMD(31556952001);
-      expect(otherMap.get("Years")).toBe(1);
-    });
-    test("If less than 31556952000, decrement the input by 31556952000 and increment \"Months\"", () => {
-      const outMap = testObject.MStoYMD(testDuration);
-      expect(outMap.get("Months")).toBe(5);
-    });
-  });
 });
-
+})
