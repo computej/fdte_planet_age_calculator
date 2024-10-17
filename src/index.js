@@ -1,5 +1,5 @@
 export class UserAgeObject {
-
+  //TODO: make it not care about which one is before/after
   constructor(dateOne,dateTwo) {
       this.firstDate = dateOne;
       if(!dateTwo) { 
@@ -15,7 +15,6 @@ export class UserAgeObject {
   oneYearMS = 1;
 
   getAgeMSOnOtherPlanets() {
-
     const ageDifference = this.secondDate.valueOf() - this.firstDate.valueOf();
     return new Map([
       ["Mercury", ageDifference * (1/.24)],
@@ -25,23 +24,8 @@ export class UserAgeObject {
     ]);
   }
 
-  MStoYMD(ms) {
-    //year count
-    let outMap = new Map([
-      ["Years",0],
-      ["Months",0],
-      ["Days",0]
-    ]);
-    if(ms >= 31556952000) { //one year
-      outMap.set("Years", Math.floor(ms / 31556952000));
-      ms = ms - (Math.floor(ms / 31556952000) * 31556952000);
-      console.log(ms);
-    }
-    if (ms >= 2629746000) { // one month
-      outMap.set("Months", Math.floor(ms / 2629746000));
-      ms = ms - (Math.floor(ms / 2629746000) * 2629746000);
-      console.log(ms);
-    }
-    return outMap;
+  durationMStoYears() {
+    const durationYears = (this.secondDate.valueOf() - this.firstDate.valueOf()) / 31556952000;
+    return durationYears;
   }
 }
