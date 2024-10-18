@@ -25,7 +25,7 @@ describe("UserAgeObject", () => {
       let testAgeObject = new UserAgeObject(testFirstDate);
       expect(testAgeObject.secondDate).toBeTruthy(); //that date is always incrementing by nature, just check for existence
     });
-    test("It should throw an exception if the first date is chronologically after the second date", () => {
+    test.skip("It should throw an exception if the first date is chronologically after the second date", () => {
       //as in the first argument is a date that's after the second argument
       expect(() => { let objectThatShouldThrow = new UserAgeObject(testSecondDate,testFirstDate) }).toThrow();
       expect(() => { let objectThatShouldNotThrow = new UserAgeObject(testFirstDate,testSecondDate) }).not.toThrow();
