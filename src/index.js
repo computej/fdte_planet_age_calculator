@@ -8,7 +8,7 @@ export class UserAgeObject {
       }
   }
 
-  getAgeMSOnOtherPlanets() {
+  getOtherPlanetValue() {
     const ageDifference = Math.abs(this.secondDate.valueOf() - this.firstDate.valueOf());
     return new Map([
       ["Mercury", ageDifference * (1/.24)],
