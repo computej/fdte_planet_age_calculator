@@ -8,8 +8,6 @@ export class UserAgeObject {
       }
   }
 
-  oneYearMS = 1;
-
   getAgeMSOnOtherPlanets() {
     const ageDifference = Math.abs(this.secondDate.valueOf() - this.firstDate.valueOf());
     return new Map([
