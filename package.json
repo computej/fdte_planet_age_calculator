@@ -4,7 +4,8 @@
   "description": "This computes what your age would be on other planets.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "build": "webpack --mode=development"
   },
   "author": "Computej",
   "license": "ISC",
