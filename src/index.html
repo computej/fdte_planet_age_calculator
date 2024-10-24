@@ -6,5 +6,38 @@
 </head>
 <body>
   <h1>Super Galactic Age Calculator</h1>
+  <form id="age-form">
+    <div>Please enter your birthday:</div> <input type="date" name="birthday-input" id="birthday-input">
+    <br>
+    <button type="submit"></button>
+  </form>
+  <span id="timespan-display">
+    <table>
+      <thead>
+        <tr>
+          <th scope="row">Planet</th>
+          <th scope="row">Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Mercury</th>
+          <td id="timespan-mercury"></td>
+        </tr>
+        <tr>
+          <th scope="row">Venus</th>
+          <td id="timespan-venus"></td>
+        </tr>
+        <tr>
+          <th scope="row">Mars</th>
+          <td id="timespan-mars"></td>
+        </tr>
+        <tr>
+          <th scope="row">Jupiter</th>
+          <td id="timespan-jupiter"></td>
+        </tr>
+      </tbody>
+    </table>
+  </span>
 </body>
 </html>
