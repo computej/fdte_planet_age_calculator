@@ -1,4 +1,4 @@
-import { UserAgeObject } from './../src/index.js';
+import { UserAgeObject } from './../src/business.js';
 
 
 //the month starts at 0 here
