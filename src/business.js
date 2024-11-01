@@ -1,10 +1,10 @@
 export class UserAgeObject {
   constructor(dateOne,dateTwo) {
-      this.firstDate = dateOne;
+      this.firstDate = new Date(dateOne);
       if(!dateTwo) { 
-        this.secondDate = Date.now();
+        this.secondDate = new Date(Date.now());
       } else {
-        this.secondDate = dateTwo;
+        this.secondDate = new Date(dateTwo);
       }
   }
 
