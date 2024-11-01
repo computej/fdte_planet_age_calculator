@@ -15,10 +15,10 @@ describe("UserAgeObject", () => {
 
   describe("constructor()", () => {
     test("It should write its first argument to the variable \"firstDate\"", () => {
-      expect(testObject.firstDate).toBe(testFirstDate);
+      expect(testObject.firstDate).toStrictEqual(testFirstDate);
     });
     test("It should write its second argument to \"secondDate\"", () => {
-      expect(testObject.secondDate).toBe(testSecondDate);
+      expect(testObject.secondDate).toStrictEqual(testSecondDate);
     });
     test("If the second argument is undefined, write Date.Now to secondDate", () => {
       //TODO: make more strict, see if it's between the time of starting this and the time that expect is called
