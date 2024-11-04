@@ -18,8 +18,9 @@ export class UserAgeObject {
     ]);
   }
 
-  durationMStoYears() {
-    const durationYears = Math.abs(this.secondDate.valueOf() - this.firstDate.valueOf()) / 31556952000;
+  //TODO: move to index
+  durationMStoYears(ms) {
+    const durationYears = ms / 31556952000;
     return durationYears;
   }
 }

@@ -7,9 +7,9 @@
 <body>
   <h1>Super Galactic Age Calculator</h1>
   <form id="age-form">
-    <div>Please enter your birthday:</div> <input type="date" name="birthday-input" id="birthday-input">
+    <div>Please enter your birthday and birth time:</div> <input type="datetime-local" name="birthday-input" id="birthday-input">
     <br>
-    <button type="submit"></button>
+    <button type="submit">Submit</button>
   </form>
   <span id="timespan-display">
     <table>
@@ -20,21 +20,23 @@
         </tr>
       </thead>
       <tbody>
+        <!-- the order must match the order in getOtherPlanetValues -->
+        <!-- TODO: add earth -->
         <tr>
           <th scope="row">Mercury</th>
-          <td id="timespan-mercury"></td>
+          <td id="timespan-mercury">test</td>
         </tr>
         <tr>
           <th scope="row">Venus</th>
-          <td id="timespan-venus"></td>
+          <td id="timespan-venus">test</td>
         </tr>
         <tr>
           <th scope="row">Mars</th>
-          <td id="timespan-mars"></td>
+          <td id="timespan-mars">test</td>
         </tr>
         <tr>
           <th scope="row">Jupiter</th>
-          <td id="timespan-jupiter"></td>
+          <td id="timespan-jupiter">test</td>
         </tr>
       </tbody>
     </table>

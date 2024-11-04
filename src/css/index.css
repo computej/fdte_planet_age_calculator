@@ -1,0 +1,19 @@
+body {
+  /* TODO: not pink */
+  background-color: black;
+  color: antiquewhite;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px inset slategray;
+}
+
+th,td {
+  border: 2px inset slategray;
+}
+
+#timespan-display {
+    /* this should be able to be overridden by JS scripts  */
+    /* display: none; */
+}
