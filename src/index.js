@@ -2,6 +2,11 @@
 import { UserAgeObject } from './../src/business.js';
 import './css/index.css';
 
+function durationMStoYears(ms) {
+  const durationYears = ms / 31556952000;
+  return durationYears;
+}
+
 window.addEventListener("load", function() {
   let ageForm = document.getElementById("age-form");
   ageForm.addEventListener("submit", (event) => {
@@ -11,7 +16,7 @@ window.addEventListener("load", function() {
     let timespanTableElements =  document.querySelectorAll("#timespan-display td[id|=timespan]");
     let mapIndex = 0; // map foreach has key and value but no index indicator
     ages.forEach((value, key) => {
-      timespanTableElements[mapIndex].innerHTML = (value  / 31556952000).toFixed(2);
+      timespanTableElements[mapIndex].innerHTML = durationMStoYears(value).toFixed(2);
       mapIndex++;
     });
   });

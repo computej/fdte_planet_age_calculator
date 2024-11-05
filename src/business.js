@@ -17,10 +17,4 @@ export class UserAgeObject {
       ["Jupiter", ageDifference * (1/11.86)]
     ]);
   }
-
-  //TODO: move to index
-  durationMStoYears(ms) {
-    const durationYears = ms / 31556952000;
-    return durationYears;
-  }
 }

@@ -55,11 +55,4 @@ describe("UserAgeObject", () => {
       expect(testObject.getOtherPlanetValue().get("Jupiter")).toBe(testDuration * (1/11.86));
     });
   });
-  describe("MStoYears()", () => {
-    //TODO: Rework: give it a argument
-    test("It should return the input argument, over 31556952000",() => {
-      const years = testObject.durationMStoYears(testDuration);
-      expect(years).toBe(22.472626633903047); // i hope precision doesn't screw it up
-    });
-  });
-})
+});
