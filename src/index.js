@@ -13,12 +13,13 @@ window.addEventListener("load", function() {
     event.preventDefault();
     const firstDate = Date.parse(this.document.getElementById("firstdate-input").value);
     const secondDate = Date.parse(this.document.getElementById("seconddate-input").value);
-    let ages = new UserAgeObject(new Date(firstDate), new Date(seconddate)).getOtherPlanetValue();
+    let ages = new UserAgeObject(new Date(firstDate), new Date(secondDate)).getOtherPlanetValue();
     let timespanTableElements =  document.querySelectorAll("#timespan-display td[id|=timespan]");
-    let mapIndex = 0; // map foreach has key and value but no index indicator
+    let mapIndex = 0;
     ages.forEach((value, key) => {
       timespanTableElements[mapIndex].innerHTML = durationMStoYears(value).toFixed(2);
       mapIndex++;
     });
+    this.document.getElementById("timespan-display").style.display = "block";
   });
 });
