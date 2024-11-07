@@ -1,17 +1,19 @@
-# The Journal
+# Super Galactic Age Calculator
 
 by Jeffrey Fisher.
 
-A javascript interface for (temporarily) writing down notes
+A javascript interface for computing ones age as it would be on other planets
 
 ## Description
 
-This is mockup of a bare-bones journaling app that I created created to learn how to use NPM and Webpack.
+This is a simple app that takes two dates, and computes the duration between them in non-Earth years.
+The results are displayed in a table.
 
 ## Technologies Used
 
 * HTML
 * CSS
+* Javascript
 * Webpack
 
 ## Installation:
@@ -31,4 +33,4 @@ Then, a folder called 'dist' should appear. Simply open dist/index.html in your 
 
 ## License
 
- The Journal © 2024 by Jeffrey Fisher is licensed under the [MIT](./LICENSE.txt) License. See LICENSE.txt
+ Super Galactic Age Calculator © 2024 by Jeffrey Fisher is licensed under the [MIT](./LICENSE.txt) License. See LICENSE.txt
