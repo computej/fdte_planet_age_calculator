@@ -18,14 +18,15 @@ The results are displayed in a table.
 
 ## Installation:
 
-This needs to be done on npm@8.19.4 in the order written:
+To download from this GitHub page, click the green "Code" button on the top-right of the file viewer, and click "Download ZIP".
 
-```
-$ npm install
-$ npm run build
-```
+Before running any of the below commands, type `npm install` into a terminal
 
-Then, a folder called 'dist' should appear. Simply open dist/index.html in your browser.
+`npm run test` to run tests and generate a test coverage report. It will be in `./coverage/lcov-report/index.html`
+
+`npm run build` to build the application with UI, the UI should appear in `./dist/index.html`
+
+
 
 ## Known Issues:
 
@@ -33,4 +34,4 @@ Then, a folder called 'dist' should appear. Simply open dist/index.html in your 
 
 ## License
 
- Super Galactic Age Calculator © 2024 by Jeffrey Fisher is licensed under the [MIT](./LICENSE.txt) License. See LICENSE.txt
+Super Galactic Age Calculator © 2024 by Jeffrey Fisher is licensed under the [MIT](./LICENSE.txt) License. See LICENSE.txt
