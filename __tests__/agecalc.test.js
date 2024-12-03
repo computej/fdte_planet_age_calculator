@@ -1,7 +1,5 @@
 import { UserAgeObject } from './../src/business.js';
 
-
-//the month starts at 0 here
 const testFirstDate = new Date(2002, 1, 17);
 const testSecondDate = new Date(2024, 7, 8);
 const testDuration = testSecondDate.valueOf() - testFirstDate.valueOf();
@@ -21,7 +19,6 @@ describe("UserAgeObject", () => {
       expect(testObject.secondDate).toStrictEqual(testSecondDate);
     });
     test("If the second argument is undefined, write Date.Now to secondDate", () => {
-      //TODO: make more strict, see if it's between the time of starting this and the time that expect is called
       let testAgeObject = new UserAgeObject(testFirstDate);
       expect(testAgeObject.secondDate).toBeTruthy(); //that date is always incrementing by nature, just check for existence
     });
@@ -29,8 +26,6 @@ describe("UserAgeObject", () => {
   describe("getOtherPlanetValue()", () => {
     test("It should return a set-like object" , () => {
       let testMap = testObject.getOtherPlanetValue();
-      //These two functions are in both JS sets and maps
-      //Don't use union() et al because that's very recently implemented in browsers
       expect(testMap.has.toString()).toBeTruthy();
       expect(testMap.keys.toString()).toBeTruthy();
     });
@@ -42,7 +37,6 @@ describe("UserAgeObject", () => {
       expect(testMap.has("Jupiter")).toBeTruthy();
     });
     test("The value of the \"Mercury\" key is equal to 1/.24 times the argument", () => {
-      //TODO: Rework: give it a argument
       expect(testObject.getOtherPlanetValue().get("Mercury")).toBe(testDuration * (1/.24));
     });
     test("The value of the \"Venus\" key is equal to 1/.62 times the argument", () => {

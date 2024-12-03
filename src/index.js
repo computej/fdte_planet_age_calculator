@@ -1,4 +1,3 @@
-//TODO: UI logic
 import { UserAgeObject } from './../src/business.js';
 import './css/index.css';
 
