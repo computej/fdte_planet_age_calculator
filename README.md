@@ -18,9 +18,10 @@ The results are displayed in a table.
 
 ## Installation:
 
-To download from this GitHub page, click the green "Code" button on the top-right of the file viewer, and click "Download ZIP".
-
-Before running any of the below commands, type `npm install` into a terminal
+1. Click the green "Code" button on the top-right of the file viewer, and click "Download ZIP".
+2. Extract the downloaded file to a new folder
+3. In a terminal, navigate to the new folder and type `npm run install` then `npm run build`
+4. A folder named "dist" should appear. Open `dist/index.html` in a web browser.
 
 `npm run test` to run tests and generate a test coverage report. It will be in `./coverage/lcov-report/index.html`
 
