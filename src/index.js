@@ -1,4 +1,4 @@
-import { UserAgeObject } from './../src/business.js';
+import { UserAgeObject } from './UserAgeObject.js';
 import './css/index.css';
 
 function durationMStoYears(ms) {

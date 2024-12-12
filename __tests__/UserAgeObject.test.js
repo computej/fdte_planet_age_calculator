@@ -1,4 +1,4 @@
-import { UserAgeObject } from './../src/business.js';
+import { UserAgeObject } from '../src/UserAgeObject.js';
 
 const testFirstDate = new Date(2002, 1, 17);
 const testSecondDate = new Date(2024, 7, 8);
