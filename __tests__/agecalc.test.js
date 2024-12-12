@@ -23,30 +23,30 @@ describe("UserAgeObject", () => {
       expect(testAgeObject.secondDate).toBeTruthy(); //that date is always incrementing by nature, just check for existence
     });
   });
-  describe("getOtherPlanetValue()", () => {
+  describe("getOtherPlanetAgeValues()", () => {
     test("It should return a set-like object" , () => {
-      let testMap = testObject.getOtherPlanetValue();
+      let testMap = testObject.getOtherPlanetAgeValues();
       expect(testMap.has.toString()).toBeTruthy();
       expect(testMap.keys.toString()).toBeTruthy();
     });
     test("The returned object should have the following keys: \nMercury\nVenus\nMars\nJupiter" , () => {
-      let testMap = testObject.getOtherPlanetValue();
+      let testMap = testObject.getOtherPlanetAgeValues();
       expect(testMap.has("Mercury")).toBeTruthy();
       expect(testMap.has("Venus")).toBeTruthy();
       expect(testMap.has("Mars")).toBeTruthy();
       expect(testMap.has("Jupiter")).toBeTruthy();
     });
     test("The value of the \"Mercury\" key is equal to 1/.24 times the argument", () => {
-      expect(testObject.getOtherPlanetValue().get("Mercury")).toBe(testDuration * (1/.24));
+      expect(testObject.getOtherPlanetAgeValues().get("Mercury")).toBe(testDuration * (1/.24));
     });
     test("The value of the \"Venus\" key is equal to 1/.62 times the argument", () => {
-      expect(testObject.getOtherPlanetValue().get("Venus")).toBe(testDuration * (1/.62));
+      expect(testObject.getOtherPlanetAgeValues().get("Venus")).toBe(testDuration * (1/.62));
     });
     test("The value of the \"Mars\" key is equal to 1/1.88 times the argument", () => {
-      expect(testObject.getOtherPlanetValue().get("Mars")).toBe(testDuration * (1/1.88));
+      expect(testObject.getOtherPlanetAgeValues().get("Mars")).toBe(testDuration * (1/1.88));
     });
     test("The value of the \"Jupiter\" key is equal to 1/11.86 times the argument", () => {
-      expect(testObject.getOtherPlanetValue().get("Jupiter")).toBe(testDuration * (1/11.86));
+      expect(testObject.getOtherPlanetAgeValues().get("Jupiter")).toBe(testDuration * (1/11.86));
     });
   });
 });

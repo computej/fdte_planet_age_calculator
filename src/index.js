@@ -12,10 +12,10 @@ window.addEventListener("load", function() {
     event.preventDefault();
     const firstDate = Date.parse(this.document.getElementById("firstdate-input").value);
     const secondDate = Date.parse(this.document.getElementById("seconddate-input").value);
-    let ages = new UserAgeObject(new Date(firstDate), new Date(secondDate)).getOtherPlanetValue();
+    let ages = new UserAgeObject(new Date(firstDate), new Date(secondDate)).getOtherPlanetAgeValues();
     let timespanTableElements =  document.querySelectorAll("#timespan-display td[id|=timespan]");
     let mapIndex = 0;
-    ages.forEach((value, key) => {
+    ages.forEach((value) => {
       timespanTableElements[mapIndex].innerHTML = durationMStoYears(value).toFixed(2);
       mapIndex++;
     });
