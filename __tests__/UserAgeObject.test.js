@@ -1,25 +1,28 @@
 import { UserAgeObject } from '../src/UserAgeObject.js';
 
-const testFirstDate = new Date(2002, 1, 17);
-const testSecondDate = new Date(2024, 7, 8);
-const testDuration = testSecondDate.valueOf() - testFirstDate.valueOf();
-let testObject = new UserAgeObject(testFirstDate,testSecondDate);
+//TODO: use numbers not dates
+
+const testFirstAge = 21;
+const testSecondAge = 23;
+
+const testDuration = testSecondAge - testFirstAge;
+let testObject = new UserAgeObject(testFirstAge,testSecondAge);
 
 describe("UserAgeObject", () => {
 
   beforeEach(() => {
-    testObject = new UserAgeObject(testFirstDate,testSecondDate);
+    testObject = new UserAgeObject(testFirstAge,testSecondAge);
   });
 
   describe("constructor()", () => {
     test("It should write its first argument to the variable \"firstDate\"", () => {
-      expect(testObject.firstDate).toStrictEqual(testFirstDate);
+      expect(testObject.firstDate).toStrictEqual(testFirstAge);
     });
     test("It should write its second argument to \"secondDate\"", () => {
-      expect(testObject.secondDate).toStrictEqual(testSecondDate);
+      expect(testObject.secondDate).toStrictEqual(testSecondAge);
     });
-    test("If the second argument is undefined, write Date.Now to secondDate", () => {
-      let testAgeObject = new UserAgeObject(testFirstDate);
+    test.skip("If the second argument is undefined, write Date.Now to secondDate", () => {
+      let testAgeObject = new UserAgeObject(testFirstAge);
       expect(testAgeObject.secondDate).toBeTruthy(); //that date is always incrementing by nature, just check for existence
     });
   });

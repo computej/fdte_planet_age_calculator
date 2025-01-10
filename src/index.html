@@ -7,8 +7,9 @@
 <body>
   <h1>Super Galactic Age Calculator</h1>
   <form id="age-form">
-    <div>Please enter date:</div> <input type="date" name="firstdate-input" id="firstdate-input">
-    <div>Please enter another date:</div> <input type="date" name="seconddate-input" id="seconddate-input">
+    <!-- TODO: show "X years have since passed/yet to pass" -->
+    <div>How old are you?:</div> <input type="number" name="firstdate-input" id="firstdate-input">
+    <div>Enter a future or past age (or 0):</div> <input type="number" name="seconddate-input" id="seconddate-input">
     <br>
     <button type="submit">Submit</button>
   </form>
@@ -21,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <!-- the order must match the order in getOtherPlanetAgeValuess -->
+        <!-- the order must match the order in getOtherPlanetAgeValues -->
         <tr>
           <th scope="row">Mercury</th>
           <td id="timespan-mercury">test</td>

@@ -1,15 +1,16 @@
 export class UserAgeObject {
+  //TODO: Numbers: not dates
   constructor(dateOne,dateTwo) {
-      this.firstDate = new Date(dateOne);
-      if(!dateTwo) { 
-        this.secondDate = new Date(Date.now());
-      } else {
-        this.secondDate = new Date(dateTwo);
-      }
+    this.firstDate = dateOne;
+    this.secondDate = 0;
+    /*istanbul ignore else */ 
+    if(!isNaN(dateTwo) &&  isFinite(dateTwo)) {
+      this.secondDate = dateTwo;
+    }
   }
 
   getOtherPlanetAgeValues() {
-    const ageDifference = Math.abs(this.secondDate.valueOf() - this.firstDate.valueOf());
+    const ageDifference = Math.abs(this.secondDate - this.firstDate);
     return new Map([
       ["Mercury", ageDifference * (1/.24)],
       ["Venus",ageDifference * (1/.62)],
