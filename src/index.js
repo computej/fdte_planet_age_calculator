@@ -1,11 +1,6 @@
 import { UserAgeObject } from './UserAgeObject.js';
 import './css/index.css';
 
-// function durationMStoYears(ms) {
-//   const durationYears = ms / 31556952000;
-//   return durationYears;
-// }
-
 window.addEventListener("load", function() {
   let ageForm = document.getElementById("age-form");
   ageForm.addEventListener("submit", (event) => {
