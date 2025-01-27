@@ -15,5 +15,10 @@ window.addEventListener("load", function() {
       mapIndex++;
     });
     this.document.getElementById("timespan-display").style.display = "block";
+    if(Math.sign(firstDate - secondDate) === 1) {
+      this.document.querySelector(".years-header").textContent = "Years Since";
+    } else {
+      this.document.querySelector(".years-header").textContent = "Years Until";
+    }
   });
 });
