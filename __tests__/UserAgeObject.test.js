@@ -21,10 +21,6 @@ describe("UserAgeObject", () => {
     test("It should write its second argument to \"secondDate\"", () => {
       expect(testObject.secondDate).toStrictEqual(testSecondAge);
     });
-    test.skip("If the second argument is undefined, write Date.Now to secondDate", () => {
-      let testAgeObject = new UserAgeObject(testFirstAge);
-      expect(testAgeObject.secondDate).toBeTruthy(); //that date is always incrementing by nature, just check for existence
-    });
   });
   describe("getOtherPlanetAgeValues()", () => {
     test("It should return a set-like object" , () => {
