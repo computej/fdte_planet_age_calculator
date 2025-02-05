@@ -52,7 +52,8 @@ describe("UserAgeObject", () => {
       expect(testObject.getOtherPlanetAgeValues().get("futureOrPast")).toBe("Future Age");
     });
     test("if the difference between secondDate and firstDate is a negative value or equal to 0, write \"Past Age\" to futureOrPast", () => {
-      expect(testObject.getOtherPlanetAgeValues().get("futureOrPast")).toBe("Past Age");
+      let newTestObject = new UserAgeObject(testSecondAge,testFirstAge);
+      expect(newTestObject.getOtherPlanetAgeValues().get("futureOrPast")).toBe("Past Age");
     });
   });
 });
