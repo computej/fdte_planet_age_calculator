@@ -47,5 +47,12 @@ describe("UserAgeObject", () => {
     test("The value of the \"Jupiter\" key is equal to 1/11.86 times the argument", () => {
       expect(testObject.getOtherPlanetAgeValues().get("Jupiter")).toBe(testDuration * (1/11.86));
     });
+
+    test("if the difference between secondDate and firstDate is a positive value, write \"Future Age\" to futureOrPast", () => {
+      expect(testObject.getOtherPlanetAgeValues().get("futureOrPast")).toBe("Future Age");
+    });
+    test("if the difference between secondDate and firstDate is a negative value or equal to 0, write \"Past Age\" to futureOrPast", () => {
+      expect(testObject.getOtherPlanetAgeValues().get("futureOrPast")).toBe("Past Age");
+    });
   });
 });
