@@ -11,11 +11,13 @@ window.addEventListener("load", function() {
     let timespanTableElements =  document.querySelectorAll("#timespan-display td[id|=timespan]");
     let mapIndex = 0;
     ages.forEach((value) => {
-      timespanTableElements[mapIndex].innerHTML = value.toFixed(2);
+      if(mapIndex < 5) {
+        timespanTableElements[mapIndex].innerHTML = value.toFixed(2);
+      }
       mapIndex++;
     });
     this.document.getElementById("timespan-display").style.display = "block";
-    if(Math.sign(firstDate - secondDate) === 1) {
+    if(ages.get("futureOrPast") === "Past Age") {
       this.document.querySelector(".years-header").textContent = "Years Since";
     } else {
       this.document.querySelector(".years-header").textContent = "Years Until";
