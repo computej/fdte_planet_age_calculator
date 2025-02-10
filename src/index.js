@@ -10,8 +10,8 @@ window.addEventListener("load", function() {
     let ages = new UserAgeObject(firstDate, secondDate).getOtherPlanetAgeValues();
     let timespanTableElements =  document.querySelectorAll("#timespan-display td[id|=timespan]");
     let mapIndex = 0;
-    ages.forEach((value) => {
-      if(mapIndex < 5) {
+    ages.forEach((value, key) => {
+      if(!(key === "futureOrPast")) {
         timespanTableElements[mapIndex].innerHTML = value.toFixed(2);
       }
       mapIndex++;
