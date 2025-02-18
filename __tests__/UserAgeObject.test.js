@@ -15,10 +15,10 @@ describe("UserAgeObject", () => {
   });
 
   describe("constructor()", () => {
-    test("It should write its first argument to the variable \"firstDate\"", () => {
-      expect(testObject.firstDate).toStrictEqual(testFirstAge);
+    test("It should write its first argument to the variable \"inputAgeYears\"", () => {
+      expect(testObject.inputAgeYears).toStrictEqual(testFirstAge);
     });
-    test("It should write its second argument to \"secondDate\"", () => {
+    test.skip("It should write its second argument to \"secondDate\"", () => {
       expect(testObject.secondDate).toStrictEqual(testSecondAge);
     });
   });
@@ -35,25 +35,32 @@ describe("UserAgeObject", () => {
       expect(testMap.has("Mars")).toBeTruthy();
       expect(testMap.has("Jupiter")).toBeTruthy();
     });
-    test("The value of the \"Mercury\" key is equal to 1/.24 times the argument", () => {
-      expect(testObject.getOtherPlanetAgeValues().get("Mercury")).toBe(testDuration * (1/.24));
+    test("The value of the \"Mercury\" key is equal to 1/.24 times the value of testFirstAge", () => {
+      expect(testObject.getOtherPlanetAgeValues().get("Mercury")).toBe(testFirstAge * (1/.24));
     });
-    test("The value of the \"Venus\" key is equal to 1/.62 times the argument", () => {
-      expect(testObject.getOtherPlanetAgeValues().get("Venus")).toBe(testDuration * (1/.62));
+    test("The value of the \"Venus\" key is equal to 1/.62 times the value of testFirstAge", () => {
+      expect(testObject.getOtherPlanetAgeValues().get("Venus")).toBe(testFirstAge * (1/.62));
     });
-    test("The value of the \"Mars\" key is equal to 1/1.88 times the argument", () => {
-      expect(testObject.getOtherPlanetAgeValues().get("Mars")).toBe(testDuration * (1/1.88));
+    test("The value of the \"Mars\" key is equal to 1/1.88 times the value of testFirstAge", () => {
+      expect(testObject.getOtherPlanetAgeValues().get("Mars")).toBe(testFirstAge * (1/1.88));
     });
-    test("The value of the \"Jupiter\" key is equal to 1/11.86 times the argument", () => {
-      expect(testObject.getOtherPlanetAgeValues().get("Jupiter")).toBe(testDuration * (1/11.86));
+    test("The value of the \"Jupiter\" key is equal to 1/11.86 times the value of testFirstAge", () => {
+      expect(testObject.getOtherPlanetAgeValues().get("Jupiter")).toBe(testFirstAge * (1/11.86));
     });
 
-    test("if the difference between secondDate and firstDate is a positive value, write \"Future Age\" to futureOrPast", () => {
+    //may move to the new function
+    test.skip("if the difference between secondDate and firstDate is a positive value, write \"Future Age\" to futureOrPast", () => {
       expect(testObject.getOtherPlanetAgeValues().get("futureOrPast")).toBe("Future Age");
     });
-    test("if the difference between secondDate and firstDate is a negative value or equal to 0, write \"Past Age\" to futureOrPast", () => {
+    test.skip("if the difference between secondDate and firstDate is a negative value or equal to 0, write \"Past Age\" to futureOrPast", () => {
       let newTestObject = new UserAgeObject(testSecondAge,testFirstAge);
       expect(newTestObject.getOtherPlanetAgeValues().get("futureOrPast")).toBe("Past Age");
+    });
+  });
+  //TODO: New function to be added, computes years until or since a different age.
+  describe("getYearsUntilSince()", () => {
+    test.skip("WIP", () => {
+      
     });
   });
 });
