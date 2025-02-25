@@ -58,9 +58,35 @@ describe("UserAgeObject", () => {
     });
   });
   //TODO: New function to be added, computes years until or since a different age.
-  describe("getYearsUntilSince()", () => {
-    test.skip("WIP", () => {
-      
+  describe("getOtherPlanetYearsUntilSince()", () => {
+    test("It should return a set like object", () => {
+      let testMap = testObject.getOtherPlanetYearsUntilSince(1);
+      expect(testMap.has.toString()).toBeTruthy();
+      expect(testMap.keys.toString()).toBeTruthy();
+    });
+    test("The returned object should have the following keys: \nEarth\nMercury\nVenus\nMars\nJupiter", () => {
+      let testMap = testObject.getOtherPlanetYearsUntilSince(1);
+      expect(testMap.has("Earth")).toBeTruthy();
+      expect(testMap.has("Mercury")).toBeTruthy();
+      expect(testMap.has("Venus")).toBeTruthy();
+      expect(testMap.has("Mars")).toBeTruthy();
+      expect(testMap.has("Jupiter")).toBeTruthy();
+    });
+    test("The value of \'Mercury\' should be the difference between the argument and inputAgeYears, times 1/.24", () => {
+      let testMap = testObject.getOtherPlanetYearsUntilSince(testSecondAge);
+      expect(testMap.get("Mercury")).toBe((testObject.inputAgeYears - testSecondAge) * (1/.24));
+    });
+    test("The value of \'Venus\' should be the difference between the argument and inputAgeYears, times 1/.62", () => {
+      let testMap = testObject.getOtherPlanetYearsUntilSince(testSecondAge);
+      expect(testMap.get("Venus")).toBe((testObject.inputAgeYears - testSecondAge) * (1/.62));
+    });
+    test("The value of \'Mars\' should be the difference between the argument and inputAgeYears, times 1/1.88 ", () => {
+      let testMap = testObject.getOtherPlanetYearsUntilSince(testSecondAge);
+      expect(testMap.get("Mars")).toBe((testObject.inputAgeYears - testSecondAge) * (1/1.88));
+    });
+    test("The value of \'Jupiter\' should be the difference between the argument and inputAgeYears, times 1/11.86", () => {
+      let testMap = testObject.getOtherPlanetYearsUntilSince(testSecondAge);
+      expect(testMap.get("Jupiter")).toBe((testObject.inputAgeYears - testSecondAge) * (1/11.86));
     });
   });
 });
