@@ -74,19 +74,19 @@ describe("UserAgeObject", () => {
     });
     test("The value of \'Mercury\' should be the difference between the argument and inputAgeYears, times 1/.24", () => {
       let testMap = testObject.getOtherPlanetYearsUntilSince(testSecondAge);
-      expect(testMap.get("Mercury")).toBe((testObject.inputAgeYears - testSecondAge) * (1/.24));
+      expect(testMap.get("Mercury")).toBe((testSecondAge - testObject.inputAgeYears) * (1/.24));
     });
     test("The value of \'Venus\' should be the difference between the argument and inputAgeYears, times 1/.62", () => {
       let testMap = testObject.getOtherPlanetYearsUntilSince(testSecondAge);
-      expect(testMap.get("Venus")).toBe((testObject.inputAgeYears - testSecondAge) * (1/.62));
+      expect(testMap.get("Venus")).toBe((testSecondAge - testObject.inputAgeYears) * (1/.62));
     });
     test("The value of \'Mars\' should be the difference between the argument and inputAgeYears, times 1/1.88 ", () => {
       let testMap = testObject.getOtherPlanetYearsUntilSince(testSecondAge);
-      expect(testMap.get("Mars")).toBe((testObject.inputAgeYears - testSecondAge) * (1/1.88));
+      expect(testMap.get("Mars")).toBe((testSecondAge - testObject.inputAgeYears) * (1/1.88));
     });
     test("The value of \'Jupiter\' should be the difference between the argument and inputAgeYears, times 1/11.86", () => {
       let testMap = testObject.getOtherPlanetYearsUntilSince(testSecondAge);
-      expect(testMap.get("Jupiter")).toBe((testObject.inputAgeYears - testSecondAge) * (1/11.86));
+      expect(testMap.get("Jupiter")).toBe((testSecondAge - testObject.inputAgeYears) * (1/11.86));
     });
   });
 });
