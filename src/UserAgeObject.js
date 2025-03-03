@@ -11,13 +11,12 @@ export class UserAgeObject {
   }
 
   getOtherPlanetAgeValues() {
-    //const ageDifference = (this.secondDate - this.inputAgeYears);
     return new Map([
-      ["Earth", Math.abs(this.inputAgeYears)],
-      ["Mercury", Math.abs(this.inputAgeYears) * (1/.24)],
-      ["Venus",Math.abs(this.inputAgeYears) * (1/.62)],
-      ["Mars",Math.abs(this.inputAgeYears) * (1/1.88)],
-      ["Jupiter", Math.abs(this.inputAgeYears) * (1/11.86)],
+      ["Earth", this.inputAgeYears],
+      ["Mercury", this.inputAgeYears * (1/.24)],
+      ["Venus",this.inputAgeYears * (1/.62)],
+      ["Mars",this.inputAgeYears * (1/1.88)],
+      ["Jupiter", this.inputAgeYears * (1/11.86)],
       ["futureOrPast", Math.sign(this.inputAgeYears) > 0 ? "Future Age" : "Past Age"]
     ]);
   }
