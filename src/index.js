@@ -7,17 +7,17 @@ window.addEventListener("load", function() {
     event.preventDefault();
     const firstDate = this.document.getElementById("firstdate-input").value;
     const secondDate = this.document.getElementById("seconddate-input").value;
-    let ages = new UserAgeObject(firstDate, secondDate).getOtherPlanetAgeValues();
+    let ages = new UserAgeObject(firstDate, secondDate).getOtherPlanetYearsUntilSince(secondDate);
     let timespanTableElements =  document.querySelectorAll("#timespan-display td[id|=timespan]");
     let mapIndex = 0;
     ages.forEach((value, key) => {
       if(!(key === "futureOrPast")) {
-        timespanTableElements[mapIndex].innerHTML = value.toFixed(2);
+        timespanTableElements[mapIndex].innerHTML = Math.abs(value).toFixed(2);
       }
       mapIndex++;
     });
     this.document.getElementById("timespan-display").style.display = "block";
-    if(ages.get("futureOrPast") === "Past Age") {
+    if(firstDate >= secondDate) {
       this.document.querySelector(".years-header").textContent = "Years Since";
     } else {
       this.document.querySelector(".years-header").textContent = "Years Until";
