@@ -7,7 +7,7 @@ window.addEventListener("load", function() {
     event.preventDefault();
     const firstDate = this.document.getElementById("firstdate-input").value;
     const secondDate = this.document.getElementById("seconddate-input").value;
-    let ages = new UserAgeObject(firstDate, secondDate).getOtherPlanetYearsUntilSince(secondDate);
+    let ages = new UserAgeObject(firstDate).getOtherPlanetYearsUntilSince(secondDate);
     let timespanTableElements =  document.querySelectorAll("#timespan-display td[id|=timespan]");
     let mapIndex = 0;
     ages.forEach((value, key) => {
